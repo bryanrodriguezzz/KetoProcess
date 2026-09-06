@@ -957,6 +957,149 @@
     .rule-item { padding: 16px; }
     .fast-phases { grid-template-columns: 1fr; }
   }
+
+  /* ── ABDOMEN / CORE ── */
+  .ab-timer {
+    background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 20px 20px;
+    text-align: center;
+    margin: 20px 0 24px;
+  }
+  .ab-timer.work { border-color: rgba(240,165,0,0.5); }
+  .ab-timer.rest { border-color: rgba(79,172,254,0.5); }
+  .ab-t-phase {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .ab-timer.work .ab-t-phase { color: var(--accent); }
+  .ab-timer.rest .ab-t-phase { color: var(--blue); }
+  .ab-t-clock {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(48px, 14vw, 72px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    font-variant-numeric: tabular-nums;
+    margin: 6px 0 2px;
+  }
+  .ab-timer.work .ab-t-clock { color: var(--accent); }
+  .ab-timer.rest .ab-t-clock { color: var(--blue); }
+  .ab-t-ex {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px; font-weight: 700;
+    color: var(--text); margin-bottom: 16px;
+  }
+  .ab-t-bar {
+    height: 6px; background: var(--bg);
+    border-radius: 50px; overflow: hidden; margin-bottom: 18px;
+  }
+  .ab-t-fill {
+    height: 100%; width: 0%;
+    background: var(--accent);
+    border-radius: 50px;
+    transition: width .25s linear;
+  }
+  .ab-timer.rest .ab-t-fill { background: var(--blue); }
+  .ab-t-btns { display: flex; gap: 10px; justify-content: center; }
+  .ab-btn {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px; font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .ab-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0e0f13;
+  }
+  .ab-btn:active { transform: scale(.96); }
+  .ab-t-note { font-size: 11px; color: var(--muted); margin-top: 12px; }
+
+  .ab-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .ab-card.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .ab-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 18px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  .ab-num {
+    flex: none;
+    width: 30px; height: 30px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: rgba(240,165,0,0.12);
+    border: 1px solid rgba(240,165,0,0.35);
+    color: var(--accent);
+    font-family: 'Syne', sans-serif;
+    font-size: 13px; font-weight: 800;
+  }
+  .ab-titles { flex: 1; min-width: 0; }
+  .ab-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px; font-weight: 700; line-height: 1.3;
+  }
+  .ab-target { font-size: 11px; color: var(--muted); }
+  .ab-time {
+    flex: none;
+    font-size: 12px; color: var(--accent);
+    background: rgba(240,165,0,0.1);
+    border: 1px solid rgba(240,165,0,0.25);
+    border-radius: 50px;
+    padding: 3px 12px;
+  }
+  .ab-fig {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4px 0;
+  }
+  .ab-fig svg { display: block; width: 100%; height: auto; }
+  .ab-mat { stroke: #2a2d38; stroke-width: 3; stroke-linecap: round; }
+  .ab-limb { stroke: var(--text); stroke-width: 5; stroke-linecap: round; fill: none; }
+  .ab-limb-thin { stroke: var(--text); stroke-width: 4; stroke-linecap: round; fill: none; }
+  .ab-limb-a { stroke: var(--accent); stroke-width: 5; stroke-linecap: round; fill: none; }
+  .ab-limb-dim { stroke: var(--muted); stroke-width: 5; stroke-linecap: round; fill: none; }
+  .ab-fill { fill: var(--text); }
+  .ab-fill-a { fill: var(--accent); }
+  .ab-tips { list-style: none; padding: 14px 18px; display: grid; gap: 8px; }
+  .ab-tips li {
+    font-size: 13.5px; color: var(--muted); line-height: 1.55;
+    padding-left: 18px; position: relative;
+  }
+  .ab-tips li::before {
+    content: '›'; position: absolute; left: 4px; top: -1px;
+    color: var(--accent); font-weight: 700;
+  }
+  .ab-tips strong { color: var(--text); }
+  .ab-prog { display: grid; gap: 10px; }
+  .ab-prog-row {
+    display: flex; gap: 12px; align-items: baseline;
+    font-size: 13.5px; color: var(--muted);
+  }
+  .ab-wk {
+    flex: none; width: 74px;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px; font-weight: 700;
+    color: var(--accent);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ab-fig svg animateTransform { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -983,6 +1126,7 @@
     <a href="#menu">🍽️ Menú</a>
     <a href="#compras">🛒 Compras</a>
     <a href="#entreno">💪 Entreno</a>
+    <a href="#abdomen">🔥 Abdomen</a>
     <a href="#run10k">🏃 10K</a>
     <a href="#habitos">✅ Hábitos</a>
     <a href="#progreso">📊 Progreso</a>
@@ -1493,6 +1637,222 @@
 
   <hr class="divider">
 
+  <!-- ═══════════════════════ ABDOMEN / CORE ═══════════════════════ -->
+  <span id="abdomen"></span>
+  <div class="section">
+    <div class="section-label">Core</div>
+    <div class="section-title">Rutina de Abdomen — 15 min 🔥</div>
+
+    <div class="callout red">
+      <div class="callout-title">⚠️ La verdad primero</div>
+      <p>No existe forma de <strong>quemar grasa solo del abdomen</strong> haciendo abdominales. La grasa baja de todo el cuerpo con el déficit calórico — eso lo maneja el plan de Daniela. Esta rutina <strong>fortalece y tonifica el core</strong> mientras la grasa se va, para que cuando baje, haya músculo debajo. Los dos trabajan juntos.</p>
+    </div>
+
+    <div class="card card-accent">
+      <div class="callout-title" style="margin-bottom:8px">⏱️ Cómo funciona</div>
+      <p style="font-size:14px; color:var(--muted)">
+        <strong style="color:var(--text)">3 rondas</strong> × <strong style="color:var(--text)">5 ejercicios</strong> × <strong style="color:var(--text)">40s trabajo / 20s descanso</strong> = 15 minutos exactos.
+        Va <strong style="color:var(--text)">después</strong> del gym o de correr — ya estás caliente, entrás directo. Si un día llegás muerto, hacé 2 rondas y listo.
+      </p>
+    </div>
+
+    <!-- ── TIMER ── -->
+    <div class="ab-timer">
+      <div class="ab-t-phase" id="ab-phase">Listo para empezar</div>
+      <div class="ab-t-clock" id="ab-clock">00:40</div>
+      <div class="ab-t-ex" id="ab-ex">Ronda 1 · Plancha</div>
+      <div class="ab-t-bar"><div class="ab-t-fill" id="ab-fill"></div></div>
+      <div class="ab-t-btns">
+        <button class="ab-btn primary" id="ab-play" onclick="abToggle()">▶ Empezar</button>
+        <button class="ab-btn" onclick="abReset()">↺ Reiniciar</button>
+      </div>
+      <div class="ab-t-note">Dejá la pantalla encendida o seguí los tiempos vos mismo.</div>
+    </div>
+
+    <!-- ── EJERCICIOS ── -->
+
+    <div class="ab-card">
+      <div class="ab-head">
+        <div class="ab-num">1</div>
+        <div class="ab-titles"><div class="ab-name">Plancha</div><div class="ab-target">Core completo · isométrico</div></div>
+        <div class="ab-time">40s</div>
+      </div>
+      <div class="ab-fig">
+        <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+          <line x1="14" y1="116" x2="226" y2="116" class="ab-mat"/>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0; 0 2.5; 0 0" dur="3.4s" repeatCount="indefinite"/>
+            <circle cx="52" cy="72" r="10" class="ab-fill"/>
+            <line x1="60" y1="78" x2="68" y2="80" class="ab-limb"/>
+            <line x1="68" y1="80" x2="68" y2="112" class="ab-limb"/>
+            <line x1="68" y1="112" x2="94" y2="112" class="ab-limb-a"/>
+            <line x1="68" y1="80" x2="130" y2="94" class="ab-limb"/>
+            <line x1="130" y1="94" x2="198" y2="112" class="ab-limb"/>
+            <line x1="198" y1="112" x2="206" y2="106" class="ab-limb"/>
+          </g>
+        </svg>
+      </div>
+      <ul class="ab-tips">
+        <li>Codos justo debajo de los hombros, antebrazos apoyados.</li>
+        <li>Cuerpo en línea recta: <strong>no</strong> subás la cola ni dejés caer la cadera.</li>
+        <li>Apretá glúteos y abdomen. Respirá normal, no aguantés el aire.</li>
+      </ul>
+    </div>
+
+    <div class="ab-card">
+      <div class="ab-head">
+        <div class="ab-num">2</div>
+        <div class="ab-titles"><div class="ab-name">Bicicleta</div><div class="ab-target">Oblicuos · abdomen alto</div></div>
+        <div class="ab-time">40s</div>
+      </div>
+      <div class="ab-fig">
+        <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+          <line x1="14" y1="116" x2="226" y2="116" class="ab-mat"/>
+          <circle cx="56" cy="78" r="10" class="ab-fill"/>
+          <line x1="62" y1="86" x2="74" y2="90" class="ab-limb"/>
+          <line x1="74" y1="90" x2="130" y2="102" class="ab-limb"/>
+          <line x1="74" y1="90" x2="52" y2="72" class="ab-limb-thin"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" values="-100 130 102; -14 130 102; -100 130 102" dur="1.7s" repeatCount="indefinite"/>
+            <line x1="130" y1="102" x2="164" y2="102" class="ab-limb-dim"/>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="86 164 102; -8 164 102; 86 164 102" dur="1.7s" repeatCount="indefinite"/>
+              <line x1="164" y1="102" x2="196" y2="102" class="ab-limb-dim"/>
+              <line x1="196" y1="102" x2="204" y2="96" class="ab-limb-dim"/>
+            </g>
+          </g>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" values="-14 130 102; -100 130 102; -14 130 102" dur="1.7s" repeatCount="indefinite"/>
+            <line x1="130" y1="102" x2="164" y2="102" class="ab-limb-a"/>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="-8 164 102; 86 164 102; -8 164 102" dur="1.7s" repeatCount="indefinite"/>
+              <line x1="164" y1="102" x2="196" y2="102" class="ab-limb-a"/>
+              <line x1="196" y1="102" x2="204" y2="96" class="ab-limb-a"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <ul class="ab-tips">
+        <li>Manos en la nuca <strong>sin jalar</strong> el cuello — los dedos apenas tocan.</li>
+        <li>Llevá el codo hacia la rodilla contraria girando el torso, no solo el brazo.</li>
+        <li>La pierna que estira va baja pero <strong>sin tocar el piso</strong>.</li>
+        <li>Lento y controlado gana. Rápido y flojo no sirve.</li>
+      </ul>
+    </div>
+
+    <div class="ab-card">
+      <div class="ab-head">
+        <div class="ab-num">3</div>
+        <div class="ab-titles"><div class="ab-name">Elevación de Piernas</div><div class="ab-target">Abdomen bajo</div></div>
+        <div class="ab-time">40s</div>
+      </div>
+      <div class="ab-fig">
+        <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+          <line x1="14" y1="116" x2="226" y2="116" class="ab-mat"/>
+          <circle cx="46" cy="98" r="10" class="ab-fill"/>
+          <line x1="56" y1="104" x2="132" y2="106" class="ab-limb"/>
+          <line x1="66" y1="108" x2="106" y2="110" class="ab-limb-thin"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" values="0 132 106; -74 132 106; 0 132 106" dur="2.6s" repeatCount="indefinite"/>
+            <line x1="132" y1="106" x2="200" y2="106" class="ab-limb-a"/>
+            <line x1="200" y1="106" x2="208" y2="100" class="ab-limb-a"/>
+          </g>
+        </svg>
+      </div>
+      <ul class="ab-tips">
+        <li>Manos bajo los glúteos si te molesta la espalda baja.</li>
+        <li>La <strong>zona lumbar pegada al piso</strong> todo el tiempo. Si se despega, no bajés tanto.</li>
+        <li>Bajá las piernas <strong>lento</strong> — ahí está el trabajo real.</li>
+        <li>Piernas casi rectas, rodillas apenas suaves.</li>
+      </ul>
+    </div>
+
+    <div class="ab-card">
+      <div class="ab-head">
+        <div class="ab-num">4</div>
+        <div class="ab-titles"><div class="ab-name">Mountain Climbers</div><div class="ab-target">Core + cardio</div></div>
+        <div class="ab-time">40s</div>
+      </div>
+      <div class="ab-fig">
+        <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+          <line x1="14" y1="116" x2="226" y2="116" class="ab-mat"/>
+          <circle cx="48" cy="58" r="10" class="ab-fill"/>
+          <line x1="58" y1="64" x2="66" y2="66" class="ab-limb"/>
+          <line x1="66" y1="66" x2="66" y2="114" class="ab-limb"/>
+          <line x1="66" y1="66" x2="142" y2="84" class="ab-limb"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" values="150 142 84; 0 142 84; 150 142 84" dur="1s" repeatCount="indefinite"/>
+            <line x1="142" y1="84" x2="176" y2="94" class="ab-limb-dim"/>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="-148 176 94; 0 176 94; -148 176 94" dur="1s" repeatCount="indefinite"/>
+              <line x1="176" y1="94" x2="208" y2="108" class="ab-limb-dim"/>
+            </g>
+          </g>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" values="0 142 84; 150 142 84; 0 142 84" dur="1s" repeatCount="indefinite"/>
+            <line x1="142" y1="84" x2="176" y2="94" class="ab-limb-a"/>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="0 176 94; -148 176 94; 0 176 94" dur="1s" repeatCount="indefinite"/>
+              <line x1="176" y1="94" x2="208" y2="108" class="ab-limb-a"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <ul class="ab-tips">
+        <li>Manos bajo los hombros, brazos firmes.</li>
+        <li>La <strong>cadera se queda quieta</strong> — no rebotés la cola arriba y abajo.</li>
+        <li>Rodilla al pecho, una a la vez, ritmo constante.</li>
+        <li>Este es el que más te va a subir las pulsaciones. Aprovechalo.</li>
+      </ul>
+    </div>
+
+    <div class="ab-card">
+      <div class="ab-head">
+        <div class="ab-num">5</div>
+        <div class="ab-titles"><div class="ab-name">Russian Twist</div><div class="ab-target">Oblicuos · rotación</div></div>
+        <div class="ab-time">40s</div>
+      </div>
+      <div class="ab-fig">
+        <svg viewBox="0 0 240 130" xmlns="http://www.w3.org/2000/svg">
+          <line x1="14" y1="116" x2="226" y2="116" class="ab-mat"/>
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="-5 0; 5 0; -5 0" dur="1.5s" repeatCount="indefinite"/>
+            <circle cx="88" cy="48" r="10" class="ab-fill"/>
+            <line x1="95" y1="56" x2="126" y2="94" class="ab-limb"/>
+          </g>
+          <line x1="126" y1="94" x2="170" y2="66" class="ab-limb"/>
+          <line x1="170" y1="66" x2="198" y2="112" class="ab-limb"/>
+          <line x1="198" y1="112" x2="208" y2="108" class="ab-limb"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" values="-28 108 72; 28 108 72; -28 108 72" dur="1.5s" repeatCount="indefinite"/>
+            <line x1="108" y1="72" x2="148" y2="82" class="ab-limb-a"/>
+            <circle cx="154" cy="83" r="8" class="ab-fill-a"/>
+          </g>
+        </svg>
+      </div>
+      <ul class="ab-tips">
+        <li>Torso inclinado hacia atrás ~45°, pecho abierto, espalda recta (no encorvada).</li>
+        <li>Gira el <strong>torso</strong>, no solo los brazos. Los hombros deben rotar.</li>
+        <li>Talones en el piso al inicio. Cuando dominés, levantalos.</li>
+        <li>Con peso (mancuerna ligera o botella de agua) o sin peso — las dos sirven.</li>
+      </ul>
+    </div>
+
+    <!-- ── RONDAS ── -->
+    <div class="card" style="margin-top:20px">
+      <div class="callout-title" style="margin-bottom:12px">📈 Progresión (no te quedés igual)</div>
+      <div class="ab-prog">
+        <div class="ab-prog-row"><span class="ab-wk">Sem 1–2</span><span>2 rondas · sin peso · enfocate en técnica</span></div>
+        <div class="ab-prog-row"><span class="ab-wk">Sem 3–5</span><span>3 rondas · sin peso · sin pausas extra</span></div>
+        <div class="ab-prog-row"><span class="ab-wk">Sem 6+</span><span>3 rondas · mancuerna en Russian twist · pies arriba</span></div>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-title">✅ Frecuencia</div>
+      <p><strong>3 a 4 veces por semana</strong>, no todos los días. El abdomen es músculo y también necesita descansar. Días ideales: después de fuerza (lunes/jueves) y después de un running (martes o viernes).</p>
+    </div>
+  </div>
 
   <hr class="divider">
 
@@ -2359,6 +2719,113 @@
   initRace();
   renderAll();
 
+
+  /* ═══════════ RUTINA DE ABDOMEN ═══════════ */
+  const AB_EX = ['Plancha','Bicicleta','Elevación de piernas','Mountain climbers','Russian twist'];
+  const AB_WORK = 40, AB_REST = 20, AB_ROUNDS = 3;
+  let abIdx = 0, abRound = 1, abPhase = 'work', abLeft = AB_WORK, abTimer = null, abDone = false;
+
+  function abBeep(freq, ms) {
+    try {
+      const Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return;
+      abBeep._c = abBeep._c || new Ctx();
+      const c = abBeep._c;
+      if (c.state === 'suspended') c.resume();
+      const o = c.createOscillator(), g = c.createGain();
+      o.type = 'sine'; o.frequency.value = freq;
+      g.gain.setValueAtTime(0.18, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + ms / 1000);
+      o.connect(g); g.connect(c.destination);
+      o.start(); o.stop(c.currentTime + ms / 1000);
+    } catch (e) {}
+  }
+
+  function abRender() {
+    const t = document.getElementById('ab-clock');
+    const p = document.getElementById('ab-phase');
+    const e = document.getElementById('ab-ex');
+    const f = document.getElementById('ab-fill');
+    const box = document.querySelector('.ab-timer');
+    if (!t) return;
+    if (abDone) {
+      t.textContent = '¡Listo!';
+      p.textContent = 'Completado';
+      e.textContent = `${AB_ROUNDS} rondas · 15 minutos 🏆`;
+      f.style.width = '100%';
+      box.classList.remove('work', 'rest');
+      return;
+    }
+    const total = abPhase === 'work' ? AB_WORK : AB_REST;
+    const m = Math.floor(abLeft / 60), s = abLeft % 60;
+    t.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    p.textContent = abPhase === 'work' ? 'Trabajo' : 'Descanso';
+    box.classList.toggle('work', abPhase === 'work');
+    box.classList.toggle('rest', abPhase === 'rest');
+    const next = abIdx === AB_EX.length - 1 ? (abRound < AB_ROUNDS ? AB_EX[0] : 'final') : AB_EX[abIdx + 1];
+    e.textContent = abPhase === 'work'
+      ? `Ronda ${abRound}/${AB_ROUNDS} · ${AB_EX[abIdx]}`
+      : `Sigue: ${next === 'final' ? '¡el final!' : next}`;
+    f.style.width = ((total - abLeft) / total * 100) + '%';
+    document.querySelectorAll('.ab-card').forEach((c, i) => {
+      c.classList.toggle('active', abTimer !== null && i === abIdx);
+    });
+  }
+
+  function abTick() {
+    abLeft--;
+    if (abLeft <= 0) {
+      if (abPhase === 'work') {
+        const last = abIdx === AB_EX.length - 1 && abRound === AB_ROUNDS;
+        if (last) {
+          clearInterval(abTimer); abTimer = null; abDone = true;
+          document.getElementById('ab-play').textContent = '▶ Empezar';
+          abBeep(880, 500);
+          abRender();
+          return;
+        }
+        abPhase = 'rest'; abLeft = AB_REST; abBeep(520, 220);
+      } else {
+        abPhase = 'work'; abLeft = AB_WORK;
+        abIdx++;
+        if (abIdx >= AB_EX.length) { abIdx = 0; abRound++; }
+        abBeep(760, 220);
+      }
+    } else if (abLeft <= 3) {
+      abBeep(620, 90);
+    }
+    abRender();
+  }
+
+  function abToggle() {
+    const btn = document.getElementById('ab-play');
+    if (abDone) { abReset(); }
+    if (abTimer) {
+      clearInterval(abTimer); abTimer = null;
+      btn.textContent = '▶ Continuar';
+      document.querySelectorAll('.ab-card').forEach(c => c.classList.remove('active'));
+    } else {
+      abBeep(760, 200);
+      abTimer = setInterval(abTick, 1000);
+      btn.textContent = '⏸ Pausar';
+      abRender();
+    }
+  }
+
+  function abReset() {
+    if (abTimer) { clearInterval(abTimer); abTimer = null; }
+    abIdx = 0; abRound = 1; abPhase = 'work'; abLeft = AB_WORK; abDone = false;
+    const btn = document.getElementById('ab-play');
+    if (btn) btn.textContent = '▶ Empezar';
+    const box = document.querySelector('.ab-timer');
+    if (box) box.classList.remove('work', 'rest');
+    document.querySelectorAll('.ab-card').forEach(c => c.classList.remove('active'));
+    const p = document.getElementById('ab-phase');
+    const t = document.getElementById('ab-clock');
+    const e = document.getElementById('ab-ex');
+    const f = document.getElementById('ab-fill');
+    if (p) { p.textContent = 'Listo para empezar'; t.textContent = '00:40'; e.textContent = 'Ronda 1 · Plancha'; f.style.width = '0%'; }
+  }
 </script>
 </body>
 </html>
