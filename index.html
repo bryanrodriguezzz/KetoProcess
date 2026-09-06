@@ -695,6 +695,149 @@
   .buy-qty { color: var(--accent); font-weight: 600; }
   .buy-note { display: block; font-size: 11px; color: var(--muted); margin-top: 1px; }
 
+  /* ── 10K TRAINING ── */
+  .race-hero {
+    background: linear-gradient(135deg, rgba(79,172,254,0.16), rgba(61,220,132,0.10));
+    border: 1px solid rgba(79,172,254,0.35);
+    border-radius: 18px;
+    padding: 22px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .race-hero h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+  .race-hero p { font-size: 13.5px; color: var(--muted); }
+  .countdown {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--blue);
+    margin: 12px 0 2px;
+  }
+  .countdown-lbl { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+
+  /* week timeline */
+  .wk-rail {
+    display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 12px;
+    scrollbar-width: none;
+  }
+  .wk-rail::-webkit-scrollbar { display: none; }
+  .wk-chip {
+    flex-shrink: 0;
+    min-width: 62px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .wk-chip b { display:block; font-family:'Syne',sans-serif; font-size:14px; font-weight:800; }
+  .wk-chip small { display:block; font-size:10px; color:var(--muted); margin-top:2px; }
+  .wk-chip.now { border-color: var(--accent); background: rgba(240,165,0,0.12); }
+  .wk-chip.now b { color: var(--accent); }
+  .wk-chip.race { border-color: var(--blue); background: rgba(79,172,254,0.12); }
+  .wk-chip.race b { color: var(--blue); }
+  .wk-chip.deload { border-color: rgba(61,220,132,0.4); }
+
+  /* session rows */
+  .sesh { display:flex; gap:12px; align-items:flex-start; padding:11px 0; border-bottom:1px solid var(--border); }
+  .sesh:last-child { border-bottom:none; }
+  .sesh-day {
+    flex-shrink:0; width:64px;
+    font-family:'Syne',sans-serif; font-size:11px; font-weight:700;
+    letter-spacing:1px; text-transform:uppercase; color:var(--muted); padding-top:2px;
+  }
+  .sesh-body { flex:1; font-size:13.5px; }
+  .sesh-body b { display:block; margin-bottom:2px; }
+  .sesh-body span { color:var(--muted); font-size:12px; }
+  .dot-easy, .dot-mod, .dot-long, .dot-gym, .dot-rest, .dot-race {
+    display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:middle;
+  }
+  .dot-easy { background: var(--green); }
+  .dot-mod { background: var(--accent); }
+  .dot-long { background: var(--blue); }
+  .dot-gym { background: #a97bff; }
+  .dot-rest { background: var(--border); }
+  .dot-race { background: var(--accent2); }
+
+  /* effort scale */
+  .rpe-row { display:flex; gap:10px; margin:14px 0; }
+  .rpe-cell { flex:1; border-radius:12px; padding:14px 10px; text-align:center; border:1px solid; }
+  .rpe-cell b { display:block; font-family:'Syne',sans-serif; font-size:13px; margin-bottom:4px; }
+  .rpe-cell small { font-size:11px; color:var(--muted); line-height:1.4; display:block; }
+  .rpe-g { background:rgba(61,220,132,.10); border-color:rgba(61,220,132,.35); }
+  .rpe-g b { color:var(--green); }
+  .rpe-y { background:rgba(240,165,0,.10); border-color:rgba(240,165,0,.35); }
+  .rpe-y b { color:var(--accent); }
+  .rpe-r { background:rgba(255,77,77,.10); border-color:rgba(255,77,77,.35); }
+  .rpe-r b { color:#ff4d4d; }
+
+  /* progress equations */
+  .eq {
+    background:var(--surface2); border:1px solid var(--border); border-radius:12px;
+    padding:14px 16px; font-size:13px; margin-bottom:10px; line-height:1.6;
+  }
+  .eq strong { color:var(--green); }
+
+  /* diary form */
+  .form-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+  .field { display:flex; flex-direction:column; gap:5px; }
+  .field.full { grid-column:1/-1; }
+  .field label { font-size:11px; color:var(--muted); letter-spacing:.5px; }
+  .field input, .field select, .field textarea {
+    background:var(--surface2); border:1px solid var(--border); border-radius:10px;
+    color:var(--text); padding:10px 12px; font-family:'DM Sans',sans-serif; font-size:14px;
+    outline:none; width:100%;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color:var(--accent); }
+  .btn {
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#111; border:none; border-radius:12px; padding:13px 20px;
+    font-family:'Syne',sans-serif; font-weight:800; font-size:14px; cursor:pointer; width:100%;
+  }
+  .btn-ghost {
+    background:transparent; color:var(--muted); border:1px solid var(--border);
+    border-radius:10px; padding:8px 14px; font-size:12px; cursor:pointer;
+  }
+  .log-item {
+    background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:13px 15px; margin-bottom:9px;
+  }
+  .log-top { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:7px; }
+  .log-top b { font-family:'Syne',sans-serif; font-size:13px; }
+  .log-stats { display:flex; flex-wrap:wrap; gap:6px; }
+  .log-stat {
+    background:var(--surface2); border:1px solid var(--border); border-radius:7px;
+    padding:3px 9px; font-size:11.5px; color:var(--muted);
+  }
+  .log-stat b { color:var(--text); font-weight:600; }
+  .log-note { font-size:12px; color:var(--muted); margin-top:7px; font-style:italic; }
+
+  /* charts */
+  .chart-box { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:16px; margin-bottom:12px; }
+  .chart-title { font-family:'Syne',sans-serif; font-weight:700; font-size:12.5px; margin-bottom:10px; }
+  .chart-empty { font-size:12.5px; color:var(--muted); text-align:center; padding:24px 0; }
+
+  /* scenario cards */
+  .scn { display:flex; align-items:center; gap:14px; padding:14px 16px; border-radius:13px; border:1px solid; margin-bottom:10px; }
+  .scn-time { font-family:'Syne',sans-serif; font-weight:800; font-size:19px; flex-shrink:0; }
+  .scn-txt { font-size:12.5px; color:var(--muted); }
+  .scn-txt b { display:block; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:2px; }
+
+  @media (max-width:600px){
+    .rpe-row { flex-direction:column; }
+    .form-grid { grid-template-columns:1fr; }
+    .countdown { font-size:34px; }
+  }
+
   /* ── QUICK NAV ── */
   .nav {
     position: sticky;
@@ -840,6 +983,7 @@
     <a href="#menu">🍽️ Menú</a>
     <a href="#compras">🛒 Compras</a>
     <a href="#entreno">💪 Entreno</a>
+    <a href="#run10k">🏃 10K</a>
     <a href="#habitos">✅ Hábitos</a>
     <a href="#progreso">📊 Progreso</a>
     <a href="#fotos">📸 Fotos</a>
@@ -1349,6 +1493,224 @@
 
   <hr class="divider">
 
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════ ENTRENAMIENTO 10K ═══════════════════════ -->
+  <span id="run10k"></span>
+  <div class="section">
+    <div class="section-label">Objetivo</div>
+    <div class="section-title">Camino al 10K 🏁</div>
+
+    <div class="race-hero">
+      <h3>No estamos entrenando para correr rápido hoy.<br>Estamos entrenando para poder correr 10 km el 22 de noviembre.</h3>
+      <div class="countdown" id="cd-days">—</div>
+      <div class="countdown-lbl">días para la carrera</div>
+      <p style="margin-top:14px">Cada semana buscamos un pequeño progreso: más distancia, menos pausas, mejor recuperación o menor esfuerzo.</p>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="section-label" style="margin:24px 0 10px">🗓️ Las 11 semanas</div>
+    <div class="wk-rail" id="wk-rail"></div>
+
+    <!-- ESTRUCTURA SEMANAL -->
+    <div class="section-label" style="margin:20px 0 10px">📆 Cómo se ve tu semana</div>
+    <div class="card">
+      <div class="sesh"><div class="sesh-day">Lunes</div><div class="sesh-body"><b><span class="dot-easy"></span>Carrera fácil</b><span>Construcción aeróbica. Cómodo, podés conversar.</span></div></div>
+      <div class="sesh"><div class="sesh-day">Martes</div><div class="sesh-body"><b><span class="dot-gym"></span>Gimnasio</b><span>Fuerza — piernas, tobillos, glúteos, core.</span></div></div>
+      <div class="sesh"><div class="sesh-day">Miércoles</div><div class="sesh-body"><b><span class="dot-mod"></span>Calidad / controlado</b><span>Bloques moderados con recuperación. Nunca sprint.</span></div></div>
+      <div class="sesh"><div class="sesh-day">Jueves</div><div class="sesh-body"><b><span class="dot-gym"></span>Gimnasio</b><span>Evitá una sesión brutal de piernas — el sábado toca largo.</span></div></div>
+      <div class="sesh"><div class="sesh-day">Viernes</div><div class="sesh-body"><b><span class="dot-rest"></span>Descanso</b><span>El descanso también entrena. Aquí es donde te adaptás.</span></div></div>
+      <div class="sesh"><div class="sesh-day">Sábado</div><div class="sesh-body"><b><span class="dot-long"></span>Carrera larga</b><span>La sesión más importante de la semana.</span></div></div>
+      <div class="sesh"><div class="sesh-day">Domingo</div><div class="sesh-body"><b><span class="dot-rest"></span>Descanso</b><span>Salvo carrera o evento.</span></div></div>
+    </div>
+    <div class="callout" style="margin-top:14px">
+      <div class="callout-title">⚽ ¿Y las mejengas?</div>
+      <p>Cuentan como carga de entrenamiento. Si jugás una mejenga intensa, tratala como una sesión dura: no la sumés encima de un día fuerte, y si quedás molido, bajale al entreno siguiente.</p>
+    </div>
+
+    <!-- PLAN 11 SEMANAS -->
+    <div class="section-label" style="margin:28px 0 10px">📋 El plan, semana por semana</div>
+    <div class="week-grid" id="plan-weeks"></div>
+
+    <div class="callout red" style="margin-top:16px">
+      <div class="callout-title">⚠️ El plan no es intocable</div>
+      <p>Si aparecen molestias importantes en el tobillo, dolor que altera tu forma de correr, hinchazón o fatiga acumulada, <strong>se repite la semana o se reduce la carga</strong>. Retroceder una semana no te quita el 10K; una lesión sí.</p>
+    </div>
+
+    <!-- COMO SE SI MEJORO -->
+    <div class="section-label" style="margin:28px 0 10px">📈 ¿Cómo sé si estoy mejorando?</div>
+    <p style="color:var(--muted); font-size:13.5px; margin-bottom:16px">No buscamos solo correr más rápido. El progreso aparece en cinco lugares distintos, y casi nunca en todos a la vez.</p>
+
+    <div class="macro-grid" style="margin-bottom:18px">
+      <div class="macro-card"><span class="macro-icon">📏</span><div class="macro-value" style="font-size:15px">Distancia</div><div class="macro-label">Cuánto aguantás</div></div>
+      <div class="macro-card"><span class="macro-icon">⏱️</span><div class="macro-value" style="font-size:15px">Ritmo</div><div class="macro-label">Min por km</div></div>
+      <div class="macro-card"><span class="macro-icon">❤️</span><div class="macro-value" style="font-size:15px">FC</div><div class="macro-label">Pulsaciones</div></div>
+      <div class="macro-card"><span class="macro-icon">⏸️</span><div class="macro-value" style="font-size:15px">Pausas</div><div class="macro-label">Cuántas y qué tan largas</div></div>
+      <div class="macro-card"><span class="macro-icon">🥵</span><div class="macro-value" style="font-size:15px">RPE</div><div class="macro-label">Esfuerzo 1–10</div></div>
+    </div>
+
+    <div class="eq">Mismo ritmo + <strong>menor FC</strong> + <strong>menor esfuerzo</strong> = progreso 🎯</div>
+    <div class="eq"><strong>Más distancia</strong> + mismo esfuerzo = progreso 🎯</div>
+    <div class="eq"><strong>Menos pausas</strong> + mismo ritmo = progreso 🎯</div>
+    <div class="eq"><strong>Recuperarte más rápido</strong> entre bloques = progreso 🎯</div>
+
+    <!-- EXPECTATIVAS -->
+    <div class="section-label" style="margin:28px 0 10px">🔮 Qué esperar cada semana</div>
+    <div style="overflow-x:auto">
+      <table class="tracker-table">
+        <thead><tr><th>Sem</th><th>Largo</th><th>Qué esperamos</th><th>Referencia</th></tr></thead>
+        <tbody>
+          <tr><td><b>1</b></td><td>5 km</td><td>Adaptación</td><td>Mucho esfuerzo, varias pausas</td></tr>
+          <tr><td><b>2</b></td><td>5.5 km</td><td>Más tiempo corriendo</td><td>Menos pausas</td></tr>
+          <tr><td><b>3</b></td><td>6 km</td><td>Mejor tolerancia</td><td>5K quizá 38–41 min</td></tr>
+          <tr><td><b>4</b></td><td>6.5 km</td><td>Descarga</td><td>Comparar FC y esfuerzo vs. sem 1</td></tr>
+          <tr><td><b>5</b></td><td>7 km</td><td>5K más cómodo</td><td>5K quizá 37–40 min</td></tr>
+          <tr><td><b>6</b></td><td>7.5 km</td><td>Más resistencia</td><td>Más distancia antes de caminar</td></tr>
+          <tr><td><b>7</b></td><td>8 km</td><td>Punto clave</td><td>El 10K se ve alcanzable</td></tr>
+          <tr><td><b>8</b></td><td>8.5 km</td><td>Evaluar ritmo/FC</td><td>Empezar a estimar el 10K</td></tr>
+          <tr><td><b>9</b></td><td>9 km</td><td>Confirmar resistencia</td><td>Terminar sintiendo que podías seguir</td></tr>
+          <tr><td><b>10</b></td><td>10 km</td><td>Simulación</td><td>Definir tiempo posible de carrera</td></tr>
+          <tr><td><b>11</b></td><td>🏁 10K</td><td>Taper</td><td>Llegar descansado</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:14px">
+      <div class="callout-title">📌 Sobre estos números</div>
+      <p>Son <strong>expectativas orientativas</strong>, no metas obligatorias. Los datos reales de tu reloj mandan siempre. Si vas más lento que la referencia pero terminás las sesiones sin dolor, vas bien.</p>
+    </div>
+
+    <!-- FRECUENCIA CARDIACA -->
+    <div class="section-label" style="margin:28px 0 10px">❤️ Tu FC: no perseguimos un número</div>
+    <div class="card card-blue">
+      <div style="display:grid; gap:9px; font-size:13.5px; margin-bottom:14px">
+        <div>🛌 <strong>FC en reposo:</strong> ~70 bpm</div>
+        <div>🏃 <strong>Promedio en tu último entreno:</strong> ~178 bpm</div>
+        <div>📈 <strong>Máximo observado:</strong> ~193 bpm</div>
+      </div>
+      <p style="font-size:13px; color:var(--muted)">Históricamente tu FC corre alta, y eso por sí solo no significa que algo esté mal. <strong style="color:var(--text)">No vamos a usar fórmulas tipo "220 menos tu edad"</strong> — esas dan un número inventado que no conoce tu cuerpo. La FC es una referencia más, junto con tu sensación de esfuerzo, si podés hablar, tu ritmo, qué tan rápido te recuperás y hacia dónde va la tendencia de las semanas.</p>
+    </div>
+
+    <div class="rpe-row">
+      <div class="rpe-cell rpe-g"><b>🟢 Fácil</b><small>Puedo conversar en frases completas<br>Esfuerzo 4–6/10</small></div>
+      <div class="rpe-cell rpe-y"><b>🟡 Moderado</b><small>Solo frases cortas<br>Esfuerzo 6–7/10</small></div>
+      <div class="rpe-cell rpe-r"><b>🔴 Muy duro</b><small>Apenas puedo hablar<br>Casi nunca lo necesitás</small></div>
+    </div>
+    <div class="callout green">
+      <div class="callout-title">🗣️ La prueba de la conversación</div>
+      <p>En las carreras fáciles (lunes) y en la larga (sábado), deberías poder decir una frase completa sin quedarte sin aire. Si no podés, vas muy rápido — bajale, aunque el reloj diga que el ritmo es "lento".</p>
+    </div>
+
+    <!-- TOBILLOS -->
+    <div class="section-label" style="margin:28px 0 10px">🦶 Protegé tus tobillos</div>
+    <div class="callout red">
+      <div class="callout-title">Tu prioridad #1</div>
+      <p>Con tu historial de esguinces, el objetivo no es solo mejorar el cardio — es <strong>llegar sano al 22 de noviembre</strong>. Un tobillo lesionado en la semana 7 termina el proyecto; una semana más lenta no.</p>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <div style="font-family:'Syne',sans-serif; font-weight:700; font-size:14px; margin-bottom:12px">💪 Trabajalos en el gym</div>
+      <div class="snack-grid">
+        <div class="snack-chip">Elevaciones de pantorrilla</div>
+        <div class="snack-chip">Elevaciones de sóleo</div>
+        <div class="snack-chip">Tibial anterior</div>
+        <div class="snack-chip">Equilibrio a una pierna</div>
+        <div class="snack-chip">Trabajo de estabilidad</div>
+        <div class="snack-chip">Glúteos</div>
+        <div class="snack-chip">Cuádriceps</div>
+        <div class="snack-chip">Femorales</div>
+        <div class="snack-chip">Core</div>
+      </div>
+      <p style="font-size:12.5px; color:var(--muted); margin-top:14px">El equilibrio a una pierna es el más aburrido y el más útil: 30–60 segundos por pierna, varias veces por semana. Se puede hacer lavándote los dientes.</p>
+    </div>
+
+    <div class="section-label" style="margin:20px 0 10px">🚦 Semáforo del tobillo</div>
+    <div class="rpe-row">
+      <div class="rpe-cell rpe-g"><b>🟢 Normal</b><small>Cansancio muscular general<br>Seguí entrenando</small></div>
+      <div class="rpe-cell rpe-y"><b>🟡 Vigilar</b><small>Molestia leve localizada<br>Bajá carga y observá</small></div>
+      <div class="rpe-cell rpe-r"><b>🔴 Parar</b><small>Dolor que aumenta al correr, hinchazón, inestabilidad, o dolor que te cambia la forma de correr</small></div>
+    </div>
+    <p style="font-size:12.5px; color:var(--muted)">Esto es una guía práctica, no un diagnóstico. Si algo te preocupa o no mejora, consultá con un profesional de salud.</p>
+
+    <!-- GIMNASIO -->
+    <div class="section-label" style="margin:28px 0 10px">🏋️ El gym también es parte del plan 10K</div>
+    <p style="color:var(--muted); font-size:13.5px; margin-bottom:14px">No es un extra: la fuerza es lo que aguanta el impacto de correr y protege tus articulaciones. Estas son las prioridades, en orden.</p>
+    <div class="card">
+      <div class="sesh"><div class="sesh-day">1º</div><div class="sesh-body"><b>🦵 Piernas</b><span>Sentadilla, prensa, zancadas — la base de todo.</span></div></div>
+      <div class="sesh"><div class="sesh-day">2º</div><div class="sesh-body"><b>🦶 Tobillos y pantorrillas</b><span>Tu punto débil histórico. No lo saltés nunca.</span></div></div>
+      <div class="sesh"><div class="sesh-day">3º</div><div class="sesh-body"><b>🍑 Glúteos</b><span>Estabilizan la cadera y la rodilla al correr.</span></div></div>
+      <div class="sesh"><div class="sesh-day">4º</div><div class="sesh-body"><b>🧍 Core</b><span>Sostiene tu postura cuando llega el cansancio.</span></div></div>
+      <div class="sesh"><div class="sesh-day">5º</div><div class="sesh-body"><b>💪 Tren superior</b><span>Importante, pero no compite con lo de arriba.</span></div></div>
+    </div>
+    <div class="callout red" style="margin-top:14px">
+      <div class="callout-title">⚠️ Cuidado con el jueves</div>
+      <p>Una sesión brutal de piernas el jueves te arruina la carrera larga del sábado. Si vas a machacar piernas, hacelo el martes y dejá el jueves más suave.</p>
+    </div>
+
+    <!-- KETO + RUNNING -->
+    <div class="section-label" style="margin:28px 0 10px">🥑 Keto + running</div>
+    <div class="callout green">
+      <div class="callout-title">Tu plan nutricional no cambia</div>
+      <p>Seguís con lo de Daniela: <strong>1,700 kcal, 3 comidas al día, sistema de intercambios y sin ayuno 16:8 por ahora</strong>. Nada de lo que hay en esta sección modifica eso.</p>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <div style="display:grid; gap:12px; font-size:13.5px">
+        <div>⏳ <strong>Las primeras semanas se sienten raras.</strong> Adaptarse a keto mientras empezás a correr puede hacer que el rendimiento fluctúe: días buenos, días pesados. Es normal y suele estabilizarse.</div>
+        <div>💧 <strong>La hidratación es lo más importante.</strong> En keto se pierde más agua y sodio. Tomá agua durante el día, no solo cuando corrés, y salá tu comida con normalidad.</div>
+        <div>🚫 <strong>No toqués las calorías ni los macros por tu cuenta.</strong> Aunque sientas que "necesitás más" para correr.</div>
+        <div>👩‍⚕️ <strong>Si aparece fatiga marcada</strong> que no se pasa entre sesiones, hablalo con Daniela antes de cambiar nada del plan.</div>
+      </div>
+    </div>
+
+    <!-- PREDICCION -->
+    <div class="section-label" style="margin:28px 0 10px">🏁 ¿Cómo vamos para el 22 de noviembre?</div>
+    <div class="scn" style="background:rgba(61,220,132,.08); border-color:rgba(61,220,132,.3)">
+      <div class="scn-time" style="color:var(--green)">80–90'</div>
+      <div class="scn-txt"><b>🟢 Conservador</b>Terminar caminando tramos. Sigue siendo un 10K completado.</div>
+    </div>
+    <div class="scn" style="background:rgba(79,172,254,.08); border-color:rgba(79,172,254,.3)">
+      <div class="scn-time" style="color:var(--blue)">72–80'</div>
+      <div class="scn-txt"><b>🔵 Probable</b>Corriendo la mayor parte, con pausas puntuales.</div>
+    </div>
+    <div class="scn" style="background:rgba(255,107,53,.08); border-color:rgba(255,107,53,.3)">
+      <div class="scn-time" style="color:var(--accent2)">65–72'</div>
+      <div class="scn-txt"><b>🔥 Ambicioso</b>Si todo sale bien y llegás sin lesiones.</div>
+    </div>
+    <div id="pred-live" class="callout" style="margin-top:6px">
+      <div class="callout-title">📊 Estimación inicial</div>
+      <p>Estos rangos son un punto de partida, no una promesa. Se van a ajustar con tus entrenos reales. Registrá tus sesiones abajo y esta tarjeta se actualiza sola.</p>
+    </div>
+
+    <!-- DIARIO -->
+    <div class="section-label" style="margin:28px 0 10px">📱 Mi Diario de Running</div>
+    <div class="card">
+      <div class="form-grid">
+        <div class="field"><label>Fecha</label><input type="date" id="f-fecha"></div>
+        <div class="field"><label>Tipo</label><select id="f-tipo">
+          <option>Fácil</option><option>Calidad</option><option>Larga</option><option>Gimnasio</option><option>Mejenga</option><option>Carrera</option>
+        </select></div>
+        <div class="field"><label>Distancia (km)</label><input type="number" step="0.1" id="f-dist" placeholder="5.0"></div>
+        <div class="field"><label>Tiempo (min)</label><input type="number" step="1" id="f-time" placeholder="38"></div>
+        <div class="field"><label>FC promedio</label><input type="number" id="f-fcavg" placeholder="178"></div>
+        <div class="field"><label>FC máxima</label><input type="number" id="f-fcmax" placeholder="193"></div>
+        <div class="field"><label># de pausas</label><input type="number" id="f-pausas" placeholder="3"></div>
+        <div class="field"><label>Min. en pausa</label><input type="number" step="0.5" id="f-pausamin" placeholder="4"></div>
+        <div class="field"><label>RPE (1–10)</label><input type="number" min="1" max="10" id="f-rpe" placeholder="7"></div>
+        <div class="field"><label>Tobillo (0–10)</label><input type="number" min="0" max="10" id="f-tobillo" placeholder="0"></div>
+        <div class="field full"><label>Notas</label><textarea id="f-notas" rows="2" placeholder="Cómo te sentiste, clima, ruta..."></textarea></div>
+        <div class="field full"><button class="btn" onclick="saveRun()">➕ Guardar entrenamiento</button></div>
+      </div>
+      <p style="font-size:11.5px; color:var(--muted); margin-top:10px">El ritmo se calcula solo a partir de distancia y tiempo.</p>
+    </div>
+
+    <div id="best-box" style="margin-top:18px"></div>
+
+    <div class="section-label" style="margin:22px 0 10px">📊 Tus gráficos</div>
+    <div id="charts"></div>
+
+    <div class="section-label" style="margin:22px 0 10px">📖 Historial</div>
+    <div id="log-list"></div>
+  </div>
+
   <!-- ═══════════════════════ CHECKLIST DIARIO ═══════════════════════ -->
   <span id="habitos"></span>
   <div class="section">
@@ -1750,6 +2112,253 @@
     score.textContent = `${done}/${total} — ${stars[done]} ${msg}`;
   }
   buyCount();
+
+  /* ═══════════ 10K TRAINING ═══════════ */
+  const RACE = new Date(2026,10,22);          // 22 nov 2026
+  const W1   = new Date(2026,8,7);            // lunes 7 set 2026 = semana 1
+
+  const PLAN = [
+    {w:1,  lun:"3 min correr + 1 min caminar × 8", mie:"5 × 3 min moderados + 2 min recuperación", sab:"5 km controlados"},
+    {w:2,  lun:"4 min correr + 1 min caminar × 7", mie:"6 × 3 min moderados", sab:"5.5 km"},
+    {w:3,  lun:"5 min correr + 1 min caminar × 6", mie:"5 × 4 min moderados", sab:"6 km"},
+    {w:4,  lun:"30–35 min fácil", mie:"4 × 4 min moderados", sab:"6.5 km", deload:true},
+    {w:5,  lun:"35 min fácil", mie:"5 × 5 min moderados", sab:"7 km"},
+    {w:6,  lun:"35–40 min fácil", mie:"4 × 6 min moderados", sab:"7.5 km"},
+    {w:7,  lun:"40 min fácil", mie:"5 × 5 min moderados", sab:"8 km"},
+    {w:8,  lun:"35 min fácil", mie:"4 × 6 min moderados", sab:"8.5 km"},
+    {w:9,  lun:"40 min fácil", mie:"5 × 6 min moderados", sab:"9 km"},
+    {w:10, lun:"35 min fácil", mie:"4 × 5 min moderados", sab:"10 km controlados"},
+    {w:11, lun:"25–30 min muy fácil", mie:"20–25 min suave + algunos min moderados", sab:"Descanso o caminata muy ligera", taper:true}
+  ];
+
+  function weekStart(n){ const d=new Date(W1); d.setDate(d.getDate()+(n-1)*7); return d; }
+  function fmtShort(d){ return d.getDate()+" "+["ene","feb","mar","abr","may","jun","jul","ago","set","oct","nov","dic"][d.getMonth()]; }
+  function currentWeek(){
+    const diff = Math.floor((new Date() - W1)/(7*864e5)) + 1;
+    return Math.min(Math.max(diff,1),11);
+  }
+
+  function initRace(){
+    const cd = document.getElementById('cd-days');
+    if(cd){
+      const d = Math.ceil((RACE - new Date())/864e5);
+      cd.textContent = d > 0 ? d : "🏁";
+    }
+    const rail = document.getElementById('wk-rail');
+    if(rail){
+      const cur = currentWeek();
+      rail.innerHTML = PLAN.map(p=>{
+        let cls='wk-chip';
+        if(p.w===cur) cls+=' now';
+        if(p.w===11) cls+=' race';
+        if(p.deload) cls+=' deload';
+        const lbl = p.w===11 ? '🏁 carrera' : (p.deload?'descarga':fmtShort(weekStart(p.w)));
+        return `<div class="${cls}" onclick="jumpWeek(${p.w})"><b>S${p.w}</b><small>${lbl}</small></div>`;
+      }).join('');
+    }
+    const box = document.getElementById('plan-weeks');
+    if(box){
+      const cur = currentWeek();
+      box.innerHTML = PLAN.map(p=>{
+        const tag = p.w===11 ? '<span class="tl-badge" style="background:rgba(79,172,254,.12);color:var(--blue);border-color:rgba(79,172,254,.3)">🏁 Semana de carrera</span>'
+                  : p.deload ? '<span class="tl-badge">🌿 Descarga</span>' : '';
+        const nowTag = p.w===cur ? '<span class="tl-badge amber">📍 Semana actual</span>' : '';
+        const extra = p.w===11
+          ? `<div class="sesh"><div class="sesh-day">Dom 22</div><div class="sesh-body"><b><span class="dot-race"></span>🏁 CARRERA 10K</b><span>El día. Salí conservador los primeros 3 km.</span></div></div>`
+          : '';
+        return `<div class="day-card" id="wk-${p.w}">
+          <div class="day-header">
+            <div class="day-name">Semana ${p.w}</div>
+            <div class="day-training">${p.w===11?'16–22 nov':fmtShort(weekStart(p.w))}</div>
+          </div>
+          <div class="prep-block" style="padding-top:6px">
+            ${tag}${nowTag}
+            <div class="sesh"><div class="sesh-day">Lunes</div><div class="sesh-body"><b><span class="dot-easy"></span>${p.lun}</b></div></div>
+            <div class="sesh"><div class="sesh-day">Miércoles</div><div class="sesh-body"><b><span class="dot-mod"></span>${p.mie}</b></div></div>
+            <div class="sesh"><div class="sesh-day">Sábado</div><div class="sesh-body"><b><span class="dot-long"></span>${p.sab}</b></div></div>
+            ${extra}
+          </div>
+        </div>`;
+      }).join('');
+    }
+  }
+  function jumpWeek(n){
+    const el=document.getElementById('wk-'+n);
+    if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  /* ---- storage ---- */
+  const LOGKEY='bryan_run_log_v1';
+  function loadRuns(){
+    try{ return JSON.parse(localStorage.getItem(LOGKEY))||[]; }catch(e){ return window._runs||[]; }
+  }
+  function saveRuns(a){
+    window._runs=a;
+    try{ localStorage.setItem(LOGKEY,JSON.stringify(a)); }catch(e){}
+  }
+  function paceOf(r){
+    if(!r.dist||!r.time) return null;
+    return r.time/r.dist;
+  }
+  function paceTxt(p){
+    if(p==null) return '—';
+    const m=Math.floor(p), s=Math.round((p-m)*60);
+    return `${m}:${String(s).padStart(2,'0')}/km`;
+  }
+  function runWeek(dateStr){
+    const d=new Date(dateStr+'T12:00:00');
+    return Math.min(Math.max(Math.floor((d-W1)/(7*864e5))+1,1),11);
+  }
+
+  function saveRun(){
+    const g=id=>document.getElementById(id).value;
+    const fecha=g('f-fecha');
+    if(!fecha){ alert('Poné la fecha 📅'); return; }
+    const r={
+      fecha, tipo:g('f-tipo'),
+      dist:parseFloat(g('f-dist'))||0,
+      time:parseFloat(g('f-time'))||0,
+      fcavg:parseInt(g('f-fcavg'))||null,
+      fcmax:parseInt(g('f-fcmax'))||null,
+      pausas:parseInt(g('f-pausas'))||0,
+      pausamin:parseFloat(g('f-pausamin'))||0,
+      rpe:parseInt(g('f-rpe'))||null,
+      tobillo:parseInt(g('f-tobillo'))||0,
+      notas:g('f-notas'), id:Date.now()
+    };
+    const a=loadRuns(); a.push(r); a.sort((x,y)=>x.fecha.localeCompare(y.fecha)); saveRuns(a);
+    ['f-dist','f-time','f-fcavg','f-fcmax','f-pausas','f-pausamin','f-rpe','f-tobillo','f-notas'].forEach(i=>document.getElementById(i).value='');
+    renderAll();
+  }
+  function delRun(id){
+    if(!confirm('¿Borrar este entrenamiento?')) return;
+    saveRuns(loadRuns().filter(r=>r.id!==id)); renderAll();
+  }
+
+  /* ---- charts (SVG puro) ---- */
+  function barChart(data,labels,color,unit,decimals){
+    if(!data.length) return '<div class="chart-empty">Registrá entrenamientos para ver el gráfico</div>';
+    const W=320,H=130,pad=26, max=Math.max(...data)*1.15||1;
+    const bw=(W-pad)/data.length;
+    let s=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;overflow:visible">`;
+    s+=`<line x1="${pad}" y1="${H-20}" x2="${W}" y2="${H-20}" stroke="#2a2d38"/>`;
+    data.forEach((v,i)=>{
+      const h=(v/max)*(H-42), x=pad+i*bw+bw*0.18, y=H-20-h, w=bw*0.64;
+      s+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="${color}" opacity="0.85"/>`;
+      s+=`<text x="${x+w/2}" y="${y-4}" fill="#e8eaf0" font-size="8" text-anchor="middle">${v.toFixed(decimals)}</text>`;
+      s+=`<text x="${x+w/2}" y="${H-8}" fill="#7a7f94" font-size="8" text-anchor="middle">${labels[i]}</text>`;
+    });
+    s+=`<text x="0" y="14" fill="#7a7f94" font-size="8">${unit}</text></svg>`;
+    return s;
+  }
+
+  function renderCharts(runs){
+    const box=document.getElementById('charts'); if(!box) return;
+    const withDist=runs.filter(r=>r.dist>0);
+    const byWeek={};
+    withDist.forEach(r=>{
+      const w=runWeek(r.fecha);
+      byWeek[w]=byWeek[w]||{dist:0,pace:[],fc:[]};
+      byWeek[w].dist+=r.dist;
+      const p=paceOf(r); if(p) byWeek[w].pace.push(p);
+      if(r.fcavg) byWeek[w].fc.push(r.fcavg);
+    });
+    const wks=Object.keys(byWeek).map(Number).sort((a,b)=>a-b);
+    const lbl=wks.map(w=>'S'+w);
+    const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:0;
+
+    const distData=wks.map(w=>byWeek[w].dist);
+    const paceData=wks.map(w=>avg(byWeek[w].pace)).filter(v=>v>0);
+    const paceLbl=wks.filter(w=>byWeek[w].pace.length).map(w=>'S'+w);
+    const fcData=wks.map(w=>avg(byWeek[w].fc)).filter(v=>v>0);
+    const fcLbl=wks.filter(w=>byWeek[w].fc.length).map(w=>'S'+w);
+    const last=withDist.slice(-8);
+    const pauseData=last.map(r=>r.pausas||0);
+    const pauseLbl=last.map(r=>r.fecha.slice(8,10)+'/'+r.fecha.slice(5,7));
+
+    box.innerHTML=`
+      <div class="chart-box"><div class="chart-title">📏 Distancia por semana</div>${barChart(distData,lbl,'#4facfe','km',1)}</div>
+      <div class="chart-box"><div class="chart-title">⏱️ Ritmo promedio por semana <span style="color:var(--muted);font-weight:400">(menos es mejor)</span></div>${barChart(paceData,paceLbl,'#f0a500','min/km',2)}</div>
+      <div class="chart-box"><div class="chart-title">❤️ FC promedio por semana</div>${barChart(fcData,fcLbl,'#ff6b6b','bpm',0)}</div>
+      <div class="chart-box"><div class="chart-title">⏸️ Pausas por entrenamiento <span style="color:var(--muted);font-weight:400">(últimos 8)</span></div>${barChart(pauseData,pauseLbl,'#3ddc84','pausas',0)}</div>`;
+  }
+
+  function renderBest(runs){
+    const box=document.getElementById('best-box'); if(!box) return;
+    const rs=runs.filter(r=>r.dist>0);
+    if(!rs.length){ box.innerHTML=''; return; }
+    const maxD=Math.max(...rs.map(r=>r.dist));
+    const paces=rs.map(r=>({p:paceOf(r),r})).filter(o=>o.p);
+    const best=paces.length?Math.min(...paces.map(o=>o.p)):null;
+    const fcs=rs.filter(r=>r.fcavg);
+    const lowFC=fcs.length?Math.min(...fcs.map(r=>r.fcavg)):null;
+    const minP=Math.min(...rs.map(r=>r.pausas||0));
+    const rpes=rs.filter(r=>r.rpe);
+    const bestR=rpes.length?Math.min(...rpes.map(r=>r.rpe)):null;
+    box.innerHTML=`<div class="callout green"><div class="callout-title">⭐ Tu mejor señal de progreso</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+        <div class="log-stat">📏 Mayor distancia: <b>${maxD.toFixed(1)} km</b></div>
+        ${best?`<div class="log-stat">⏱️ Mejor ritmo: <b>${paceTxt(best)}</b></div>`:''}
+        ${lowFC?`<div class="log-stat">❤️ FC más baja: <b>${lowFC} bpm</b></div>`:''}
+        <div class="log-stat">⏸️ Menos pausas: <b>${minP}</b></div>
+        ${bestR?`<div class="log-stat">🥵 Mejor RPE: <b>${bestR}/10</b></div>`:''}
+      </div></div>`;
+  }
+
+  function renderPred(runs){
+    const el=document.getElementById('pred-live'); if(!el) return;
+    const rs=runs.filter(r=>r.dist>=3&&r.time>0);
+    if(rs.length<2){
+      el.innerHTML=`<div class="callout-title">📊 Estimación inicial</div>
+        <p>Estos rangos son un punto de partida, no una promesa. Se van a ajustar con tus entrenos reales. Registrá tus sesiones abajo y esta tarjeta se actualiza sola.</p>`;
+      return;
+    }
+    const longest=rs.reduce((a,b)=>b.dist>a.dist?b:a);
+    const p=paceOf(longest);
+    // Riegel simplificado: el ritmo se degrada ~6% al doblar distancia
+    const est=p*10*Math.pow(10/longest.dist,0.06);
+    const lo=Math.round(est*0.94), hi=Math.round(est*1.08);
+    const first=rs[0], lastR=rs[rs.length-1];
+    let trend='';
+    if(lastR.dist>first.dist) trend='Tu resistencia está mejorando: ya estás cubriendo más distancia que al inicio. ';
+    const pauseTrend = (lastR.pausas||0) < (first.pausas||0) ? 'Además estás haciendo menos pausas. ' : '';
+    el.innerHTML=`<div class="callout-title">📊 Con tus últimos entrenos</div>
+      <p>${trend}${pauseTrend}Tomando tu sesión más larga (<strong>${longest.dist.toFixed(1)} km</strong> a ${paceTxt(p)}), una estimación aproximada para el 10K sería <strong>${lo}–${hi} min</strong>.</p>
+      <p style="margin-top:8px;font-size:12.5px;color:var(--muted)">Es un cálculo aproximado basado en cómo suele degradarse el ritmo al aumentar la distancia. No es una promesa — sirve para ver la tendencia, no para fijar una meta.</p>`;
+  }
+
+  function renderLog(runs){
+    const box=document.getElementById('log-list'); if(!box) return;
+    if(!runs.length){ box.innerHTML='<div class="chart-empty">Todavía no hay entrenamientos registrados.</div>'; return; }
+    box.innerHTML=[...runs].reverse().map(r=>{
+      const p=paceOf(r);
+      const d=new Date(r.fecha+'T12:00:00');
+      return `<div class="log-item">
+        <div class="log-top">
+          <b>${r.tipo} · ${fmtShort(d)} <span style="color:var(--muted);font-weight:400">· S${runWeek(r.fecha)}</span></b>
+          <button class="btn-ghost" onclick="delRun(${r.id})">✕</button>
+        </div>
+        <div class="log-stats">
+          ${r.dist?`<div class="log-stat">📏 <b>${r.dist} km</b></div>`:''}
+          ${r.time?`<div class="log-stat">⏱️ <b>${r.time} min</b></div>`:''}
+          ${p?`<div class="log-stat">🏃 <b>${paceTxt(p)}</b></div>`:''}
+          ${r.fcavg?`<div class="log-stat">❤️ <b>${r.fcavg}</b>${r.fcmax?` / ${r.fcmax}`:''}</div>`:''}
+          ${r.pausas?`<div class="log-stat">⏸️ <b>${r.pausas}</b>${r.pausamin?` (${r.pausamin}min)`:''}</div>`:''}
+          ${r.rpe?`<div class="log-stat">🥵 <b>${r.rpe}/10</b></div>`:''}
+          ${r.tobillo>0?`<div class="log-stat" style="border-color:rgba(255,77,77,.4)">🦶 <b>${r.tobillo}/10</b></div>`:''}
+        </div>
+        ${r.notas?`<div class="log-note">"${r.notas}"</div>`:''}
+      </div>`;
+    }).join('');
+  }
+
+  function renderAll(){
+    const runs=loadRuns();
+    renderBest(runs); renderCharts(runs); renderPred(runs); renderLog(runs);
+  }
+  initRace();
+  renderAll();
+
 </script>
 </body>
 </html>
